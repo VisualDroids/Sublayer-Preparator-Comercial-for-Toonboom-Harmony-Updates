@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Visual Droids Download</title>
+	<style>
+		body {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			height: 100vh;
+		}
+	</style>
+</head>
+<body>
+	<script>
+		fetch("https://api.github.com/repos/VisualDroids/EZ-Templates-for-Toonboom-Harmony-Updates/releases/latest")
+			.then(response => response.json())
+			.then(data => {
+				window.location = data.assets[0].browser_download_url;
+				setTimeout(function(){
+					window.location = "https://stuff.visualdroids.com";
+				}, 5000);
+			});
+	</script>
+</body>
+</html>
